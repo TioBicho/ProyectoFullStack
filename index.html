@@ -1,13 +1,254 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>levelup</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Level-Up Gamer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="py-3 sticky-top">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+
+            <!-- Logotipo -->
+            <a href="index.html"
+                class="d-flex align-items-center gap-2 text-decoration-none text-white brand-font fs-4">
+                <i class="bi bi-controller text-primary fs-3"></i>
+                <span>LEVEL-UP <span class="text-success">GAMER</span></span>
+            </a>
+            
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#catalogo">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="login.html" id="nav-user">Iniciar sesión</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div>
+                <a href="carrito.html" class="btn btn-outline-light d-flex align-items-center gap-2">
+                    <i class="bi bi-cart3"></i>
+                    <span>Cart (<span id="cart-count">0</span>)</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container my-5">
+
+        <!-- Portada (Hero) a 2 Columnas -->
+        <section class="row align-items-center py-4 mb-5 hero-section">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h1 class="display-4 fw-bold mb-3">TIENDA ONLINE GAMER</h1>
+                <p class="lead text-secondary mb-4">
+                    Equípate con el mejor hardware, accesorios de alto rendimiento y sillas ergonómicas en Chile. Sube
+                    de nivel tu experiencia de juego.
+                </p>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="imagenes/foto principal.jpg"
+                    alt="Setup gamer profesional con iluminación RGB de Level-Up Gamer"
+                    class="img-fluid rounded-3 border border-secondary shadow">
+            </div>
+        </section>
+
+        <!-- Catálogo de 8 Productos -->
+        <section id="catalogo" class="my-5 pt-3">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Catálogo Destacado</h2>
+                <p class="text-secondary">Selección oficial de productos para potenciar tu juego</p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-ss2 row-cols-lg-4 g-4">
+
+                <!-- Producto 1 -->
+                <div class="col">
+                    <article class="card h-100 p-3 card-gamer d-flex flex-column justify-content-between">
+                        <img class= "foto-producto "src="imagenes/catan.jpg"
+                            class="card-img-top rounded mb-3" alt="Juego de mesa Catan">
+                        <div>
+                            <h3 class="h6 text-white mb-2">Catan</h3>
+                            <p class="fs-5 fw-bold text-info mb-3">$29.990 CLP</p>
+                        </div>
+                        <button onclick="agregarAlCarrito('JM001')" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus me-1"></i> Agregar
+                        </button>
+                    </article>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="col">
+                    <article class="card h-100 p-3 card-gamer d-flex flex-column justify-content-between">
+                        <img class= "foto-producto "src="imagenes/carcassonne.jpg"
+                            class="card-img-top rounded mb-3" alt="Juego de mesa Carcassonne">
+                        <div>
+                            <h3 class="h6 text-white mb-2">Carcassonne</h3>
+                            <p class="fs-5 fw-bold text-info mb-3">$24.990 CLP</p>
+                        </div>
+                        <button onclick="agregarAlCarrito('JM002')" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus me-1"></i> Agregar
+                        </button>
+                    </article>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="col">
+                    <article class="card h-100 p-3 card-gamer d-flex flex-column justify-content-between">
+                        <img class="foto-producto" src="imagenes/mando.jpg"
+                            class="card-img-top rounded mb-3" alt="Mando Inalámbrico Xbox Series X">
+                        <div>
+                            <h3 class="h6 text-white mb-2">Mando Inalámbrico Xbox Series X</h3>
+                            <p class="fs-5 fw-bold text-info mb-3">$59.990 CLP</p>
+                        </div>
+                        <button onclick="agregarAlCarrito('AC001')" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus me-1"></i> Agregar
+                        </button>
+                    </article>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="col">
+                    <article class="card h-100 p-3 card-gamer d-flex flex-column justify-content-between">
+                        <img class="foto-producto" src="imagenes/hyperxcloud2.jpg"
+                            class="card-img-top rounded mb-3" alt="Auriculares Gamer HyperX Cloud II">
+                        <div>
+                            <h3 class="h6 text-white mb-2">Auriculares Gamer HyperX Cloud II</h3>
+                            <p class="fs-5 fw-bold text-info mb-3">$79.990 CLP</p>
+                        </div>
+                        <button onclick="agregarAlCarrito('AC002')" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus me-1"></i> Agregar
+                        </button>
+                    </article>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="col">
+                    <article class="card h-100 p-3 card-gamer d-flex flex-column justify-content-between">
+                        <img class="foto-producto" src="imagenes/ps5.jpg"
+                            class="card-img-top rounded mb-3" alt="Consola PlayStation 5">
+                        <div>
+                            <h3 class="h6 text-white mb-2">PlayStation 5</h3>
+                            <p class="fs-5 fw-bold text-info mb-3">$549.990 CLP</p>
+                        </div>
+                        <button onclick="agregarAlCarrito('CO001')" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus me-1"></i> Agregar
+                        </button>
+                    </article>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="col">
+                    <article class="card h-100 p-3 card-gamer d-flex flex-column justify-content-between">
+                        <img class="foto-producto" src="imagenes/asuspc.jpg"
+                            class="card-img-top rounded mb-3" alt="Computador PC Gamer ASUS ROG Strix">
+                        <div>
+                            <h3 class="h6 text-white mb-2">PC Gamer ASUS ROG Strix</h3>
+                            <p class="fs-5 fw-bold text-info mb-3">$1.299.990 CLP</p>
+                        </div>
+                        <button onclick="agregarAlCarrito('CG001')" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus me-1"></i> Agregar
+                        </button>
+                    </article>
+                </div>
+
+                <!-- Producto 7 -->
+                <div class="col">
+                    <article class="card h-100 p-3 card-gamer d-flex flex-column justify-content-between">
+                        <img class="foto-producto" src="imagenes/silla.jpg"
+                            class="card-img-top rounded mb-3" alt="Silla Gamer Secretlab Titan">
+                        <div>
+                            <h3 class="h6 text-white mb-2">Silla Gamer Secretlab Titan</h3>
+                            <p class="fs-5 fw-bold text-info mb-3">$349.990 CLP</p>
+                        </div>
+                        <button onclick="agregarAlCarrito('SG001')" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus me-1"></i> Agregar
+                        </button>
+                    </article>
+                </div>
+
+                <!-- Producto 8 -->
+                <div class="col">
+                    <article class="card h-100 p-3 card-gamer d-flex flex-column justify-content-between">
+                        <img class="foto-producto" src="imagenes/mouse.jpg"
+                            class="card-img-top rounded mb-3" alt="Mouse Gamer Logitech G502 HERO">
+                        <div>
+                            <h3 class="h6 text-white mb-2">Mouse Gamer Logitech G502 </h3>
+                            <p class="fs-5 fw-bold text-info mb-3">$49.990 CLP</p>
+                        </div>
+                        <button onclick="agregarAlCarrito('MS001')" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus me-1"></i> Agregar
+                        </button>
+                    </article>
+                </div>
+                <!--Producto 9-->
+                <div class="col">
+                    <article class="card h-100 p-3 card-gamer d-flex flex-column justify-content-between">
+                        <img class="foto-producto" src="imagenes/mousepad.jpg"
+                            class="card-img-top rounded mb-3" alt="Mousepad Razer Goliathus">
+                        <div>
+                            <h3 class="h6 text-white mb-2">Mousepad Razer Goliathus</h3>
+                            <p class="fs-5 fw-bold text-info mb-3">$29.990 CLP</p>
+                        </div>
+                        <button onclick="agregarAlCarrito('MP001')" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-cart-plus me-1"></i> Agregar
+                        </button>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+
+                <!-- Nombre -->
+                <div class="col-12 col-md-4">
+                    <h4 class="brand-font text-white mb-2">LEVEL-UP GAMER</h4>
+                    <p class="text-secondary small">Tienda online especializada en hardware y accesorios gamer en Chile.
+                    </p>
+                </div>
+
+                <!-- 3 Categorías mínimas -->
+                <div class="col-12 col-md-4">
+                    <h5 class="text-white mb-3">Categorías</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#catalogo" class="text-secondary text-decoration-none">Consolas &
+                                Computadores</a></li>
+                        <li class="mb-2"><a href="#catalogo" class="text-secondary text-decoration-none">Periféricos &
+                                Accesorios</a></li>
+                        <li class="mb-2"><a href="#catalogo" class="text-secondary text-decoration-none">Juegos de
+                                Mesa</a></li>
+                    </ul>
+                </div>
+
+                <!-- Formulario breve de Boletín -->
+                <div class="col-12 col-md-4">
+                    <h5 class="text-secondary small">Suscríbete y recibe promociones exclusivas.</h5>
+                    <form class="d-flex gap-2"
+                        onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!'); this.reset();">
+                        <label for="newsletterEmail" class="visually-hidden">Correo electrónico</label>
+                        <input type="email" id="newsletterEmail" class="form-control form-control-sm"
+                            placeholder="Ingresa tu correo" required>
+                        <button class="btn btn-success btn-sm px-3 fw-bold" type="submit">Suscribir</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/app.js"></script>
+</body>
+
 </html>

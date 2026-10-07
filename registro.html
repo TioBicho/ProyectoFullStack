@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Gamer | Registro de Usuario</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Encabezado-->
+  <header class="top-header py-3 sticky-top">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="index.html" class="brand-font fs-4 text-decoration-none d-flex align-items-center gap-2">
+        <i class="bi bi-controller text-info"></i>
+        <span style="color: #ffffff;">LEVEL-UP</span>
+        <span style="color: var(--neon-green);">GAMER</span>
+      </a>
+
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#catalogo">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Iniciar sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Formulario Centrado -->
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        
+        <div class="card-gamer p-4 p-md-5 border border-secondary shadow-lg">
+          <h2 class="brand-font text-center mb-4 text-white">Registro de usuario</h2>
+
+          <form id="registroForm" novalidate>
+
+            <!-- 1. Nombre Completo -->
+            <div class="mb-3">
+              <label for="nombre" class="form-label text-white small fw-bold">NOMBRE COMPLETO</label>
+              <input type="text" class="form-control" id="nombre" maxlength="50" placeholder="Ej: Benjamin Castro">
+              <span class="helper-text">Obligatorio. Únicamente letras y espacios (máximo 50 caracteres).</span>
+              <span class="error-msg" id="error-nombre"></span>
+            </div>
+
+            <!-- 2. Correo Electrónico -->
+            <div class="mb-3">
+              <label for="correo" class="form-label text-white small fw-bold">CORREO</label>
+              <input type="email" class="form-control" id="correo" placeholder="nombre@correo.com">
+              <span class="helper-text">Formato válido. Debe ser único en la plataforma.</span>
+              <span class="error-msg" id="error-correo"></span>
+            </div>
+
+            <!-- 3. Confirmar Correo -->
+            <div class="mb-3">
+              <label for="confirmarCorreo" class="form-label text-white small fw-bold">CONFIRMAR CORREO</label>
+              <input type="email" class="form-control" id="confirmarCorreo" placeholder="nombre@correo.com">
+              <span class="helper-text">Debe coincidir exactamente con el correo ingresado.</span>
+              <span class="error-msg" id="error-confirmarCorreo"></span>
+            </div>
+
+            <!-- 4. Contraseña -->
+            <div class="mb-3">
+              <label for="password" class="form-label text-white small fw-bold">CONTRASEÑA</label>
+              <input type="password" class="form-control" id="password" placeholder="••••••••">
+              <span class="helper-text">Mínimo 8 caracteres, al menos 1 mayúscula, 1 minúscula, 1 número y 1 símbolo (@#$%!.*).</span>
+              <span class="error-msg" id="error-password"></span>
+            </div>
+
+            <!-- 5. Confirmar Contraseña -->
+            <div class="mb-3">
+              <label for="confirmarPassword" class="form-label text-white small fw-bold">CONFIRMAR CONTRASEÑA</label>
+              <input type="password" class="form-control" id="confirmarPassword" placeholder="••••••••">
+              <span class="helper-text">Debe coincidir con la contraseña anterior.</span>
+              <span class="error-msg" id="error-confirmarPassword"></span>
+            </div>
+
+            <!-- 6. Teléfono -->
+            <div class="mb-3">
+              <label for="telefono" class="form-label text-white small fw-bold">TELÉFONO (Opcional)</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="+56 9 1234 5678 o 912345678">
+              <span class="helper-text">Opcional. Si se ingresa, debe ser formato móvil chileno válido.</span>
+              <span class="error-msg" id="error-telefono"></span>
+            </div>
+
+            <!-- 7. Región y Comuna Encadenados -->
+            <div class="row g-2 mb-4">
+              <div class="col-md-6">
+                <label for="region" class="form-label text-white small fw-bold">REGIÓN</label>
+                <select class="form-select" id="region">
+                  <option value="">Seleccione su región</option>
+                </select>
+                <span class="error-msg" id="error-region"></span>
+              </div>
+
+              <div class="col-md-6">
+                <label for="comuna" class="form-label text-white small fw-bold">COMUNA</label>
+                <select class="form-select" id="comuna" disabled>
+                  <option value="">Seleccione comuna...</option>
+                </select>
+                <span class="error-msg" id="error-comuna"></span>
+              </div>
+            </div>
+
+            <!-- Botón de Registro -->
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-outline-light px-5 py-2 fw-bold">
+                Registrar
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="./assets/app.js"></script>
+  <script src="./assets/registro.js"></script>
+</body>
+</html>

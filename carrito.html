@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Gamer | Mi Carrito</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Encabezado-->
+  <header class="py-3 sticky-top top-header">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none text-white brand-font fs-4">
+        <i class="bi bi-controller text-primary fs-3"></i>
+        <span>LEVEL-UP <span class="text-success">GAMER</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link px-3 text-white" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link px-3 text-white" href="index.html#catalogo">Productos</a></li>
+          <li class="nav-item"><a class="nav-link px-3 text-white" href="login.html" id="nav-user">Iniciar sesión</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <a href="carrito.html" class="btn btn-outline-light d-flex align-items-center gap-2">
+          <i class="bi bi-cart3"></i>
+          <span>Cart (<span id="cart-count">0</span>)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal del Carrito -->
+  <main class="container my-5">
+    <h1 class="brand-font text-white mb-4 fs-2">Mi carrito de compras</h1>
+
+    <div class="row g-4">
+      <!-- Columna Izquierda: Listado de artículos agregados -->
+      <section class="col-lg-8" id="lista-carrito">
+      </section>
+
+      <!-- Columna Derecha-->
+      <aside class="col-lg-4">
+        <div class="card-gamer p-4 border border-secondary rounded-3">
+          <h2 class="h5 brand-font text-white mb-3 border-bottom border-secondary pb-2">Resumen</h2>
+          
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-secondary">Subtotal</span>
+            <span id="subtotal-monto" class="fw-bold text-white">$0 CLP</span>
+          </div>
+
+          <div class="d-flex justify-content-between mb-2 text-success" id="fila-descuento" style="display: none !important;">
+            <span>Descuento aplicado</span>
+            <span id="descuento-monto" class="fw-bold">-$0 CLP</span>
+          </div>
+
+          <hr class="border-secondary my-3">
+
+          <div class="d-flex justify-content-between mb-4 fs-4 fw-bold">
+            <span class="text-white">TOTAL:</span>
+            <span id="total-monto" class="text-info">$0 CLP</span>
+          </div>
+
+          <!-- Bloque de Cupon de Descuento -->
+          <div class="mb-4">
+            <label for="cuponInput" class="form-label text-secondary small">Ingresa el cupón de descuento:</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="cuponInput" placeholder="Ej: DUOC20">
+              <button class="btn btn-outline-info fw-bold" type="button" id="btn-aplicar-cupon">APLICAR</button>
+            </div>
+            <span class="error-msg" id="error-cupon"></span>
+            <span class="text-success small fw-bold mt-1 d-block" id="exito-cupon"></span>
+          </div>
+
+          <!-- Boton Pagar -->
+          <button type="button" class="btn btn-success w-100 py-3 fw-bold fs-5 text-uppercase" id="btn-pagar">
+            PAGAR
+          </button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="./assets/app.js"></script>
+  <script src="./assets/carrito.js"></script>
+</body>
+</html>
