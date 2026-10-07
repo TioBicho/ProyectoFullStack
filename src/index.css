@@ -1,0 +1,103 @@
+
+:root {
+  --bg-main: #000000;
+  --bg-card: #121318;
+  --neon-blue: #1e90ff;
+  --neon-green: #39ff14;
+  --text-main: #ffffff;
+  --text-muted: #a0a5b5;
+  --border-color: #262934;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Forzar fondo oscuro en toda la pagina */
+html, body {
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .brand-font {
+  font-family: 'Arial', sans-serif;
+  color: var(--text-main) !important;
+}
+
+/* Header superior */
+header.top-header {
+  background-color: #0d0e12 !important;
+  border-bottom: 2px solid var(--neon-blue);
+}
+
+.sub-header {
+  background-color: #050507;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Enlaces del menu */
+.nav-link {
+  color: var(--text-main) !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--neon-green) !important;
+}
+
+/* Boton de Carrito del header */
+.btn-cart-header {
+  background-color: transparent !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--neon-blue) !important;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-cart-header:hover {
+  background-color: var(--neon-blue) !important;
+  color: #000000 !important;
+}
+
+/* Tarjetas */
+.card-gamer {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-gamer:hover {
+  border-color: var(--neon-blue) !important;
+  transform: translateY(-4px);
+}
+
+/* Footer */
+footer {
+  background-color: #050507 !important;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Media Query Responsive para celulares */
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+  }
+}
+
+/* Ajustes de imágenes */
+.foto-producto {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
